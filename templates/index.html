@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="floating-circle circle-1"></div>
+  <div class="floating-circle circle-2"></div>
+  
+  <nav>
+    <div class="company-name">
+      <h1>Bridge<span class="blue">P</span>oint</h1>
+      <p>Advisory</p>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="service.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="home">
+    <div class="home-logo">
+      <img src="logo.jpeg" alt="Company Logo">
+    </div>
+    <div class="content">
+      <h3>Welcome to Our Website</h3>
+      <p>Your one-stop solution for all your needs. Explore our services and get in touch!</p>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
+  </section>
+
+    <!-- Why Work With Us Section -->
+    <section class="why-section">
+        <div class="why-container">
+            <h2>Why Work With BridgePoint Advisory?</h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Start-up Mindset</h3>
+                    <p>We understand the struggles of starting and growing a business. Our team has been there and knows what it takes.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <h3>Affordable Solutions</h3>
+                    <p>Advisory services designed to fit start-up budgets without compromising on quality or expertise.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-hands"></i></div>
+                    <h3>Hands-On Support</h3>
+                    <p>Practical, step-by-step guidance instead of just reports. We work alongside you to implement solutions.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Network Access</h3>
+                    <p>Connections to investors, incubators, and development partners to accelerate your business growth.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Future Growth Partner</h3>
+                    <p>We grow with our clients, building long-term relationships based on trust and mutual success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMITMENT SECTION -->
+        <section class="commitment-section">
+            <div class="section-header">
+                <h2>Our Commitment to Transformation</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="commitment-container">
+                <div class="commitment-badge">
+                    <h3>100% Black Owned & Managed</h3>
+                    <p>Category 1 B-BBEE Provider</p>
+                </div>
+
+                <div class="commitment-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <h4>Category 1</h4>
+                        <p>B-BBEE Provider</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">💼</div>
+                        <h4>100%</h4>
+                        <p>Black Ownership<br>70% Black Women Ownership</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <h4>100%</h4>
+                        <p>Black Directors and Management</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">🚀</div>
+                        <h4>Our Focus</h4>
+                        <p>Developing Small and Growing Businesses</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <script>
+        const slider = document.querySelector('.reasons-grid');
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if(!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // scroll speed multiplier
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+
+</body>
+</html>

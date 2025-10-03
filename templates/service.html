@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" href="service.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="floating-circle circle-1"></div>
+    <div class="floating-circle circle-2"></div>
+    <nav>
+        <div class="company-name">
+            <h1>Bridge<span class="blue">P</span>oint</h1>
+            <p>Advisory</p>
+        </div>
+        <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="banner">
+        <div class="banner-header">
+            <h1>Our <span class="highlight">Services</span></h1>
+            <p>Click on any service to learn more about how we can help your business grow</p>
+        </div>
+
+        <div class="slider-container">
+            <div class="slider" style="--quantity: 4">
+                <div class="item" style="--position: 1" data-service="Business">
+                    <div class="card" >
+                        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Business Strategy</h3>
+                        <p>Strategic planning & growth roadmaps</p>
+                    </div>
+                </div>
+                <div class="item" style="--position: 2" data-service="Financial">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-coins"></i></div>
+                        <h3>Financial Advisory</h3>
+                        <p>Expert financial guidance & modeling</p>
+                    </div>
+                </div>
+                <div class="item" style="--position: 3" data-service="Operation">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>Operations</h3>
+                        <p>Process optimization & compliance</p>
+                    </div>
+                </div>
+                <div class="item" style="--position: 4" data-service="SME">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>SME Support</h3>
+                        <p>Entrepreneur coaching & mentorship</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-info" id="serviceInfo">
+        <button class="close-info" onclick="closeServiceInfo()">&times;</button>
+        <div id="serviceContent"></div>
+    </div>
+
+    <!-- Target Clients Section -->
+    <section class="target-clients">
+        <h2 class="section-title">Target Clients</h2>
+        <div class="clients-grid">
+            <div class="client-card">
+                <div class="client-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Entrepreneurs & Start-ups</h3>
+                <p>Empowering innovative minds to turn ideas into thriving businesses with strategic guidance and support.</p>
+            </div>
+            <div class="client-card">
+                <div class="client-icon"><i class="fas fa-store"></i></div>
+                <h3>Small & Medium Enterprises</h3>
+                <p>Helping SMEs scale operations, optimize processes, and achieve sustainable growth in competitive markets.</p>
+            </div>
+            <div class="client-card">
+                <div class="client-icon"><i class="fas fa-building"></i></div>
+                <h3>Corporate Enterprise Development</h3>
+                <p>Supporting corporate programs focused on supplier development, innovation, and strategic partnerships.</p>
+            </div>
+            <div class="client-card">
+                <div class="client-icon"><i class="fas fa-hands-helping"></i></div>
+                <h3>Non-Profit & Development Agencies</h3>
+                <p>Partnering with organizations dedicated to social impact and sustainable community development.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Us Section -->
+    <section class="why-section">
+        <div class="why-container">
+            <h2>Why Work With BridgePoint Advisory?</h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Start-up Mindset</h3>
+                    <p>We understand the struggles of starting and growing a business. Our team has been there and knows what it takes.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <h3>Affordable Solutions</h3>
+                    <p>Advisory services designed to fit start-up budgets without compromising on quality or expertise.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-hands"></i></div>
+                    <h3>Hands-On Support</h3>
+                    <p>Practical, step-by-step guidance instead of just reports. We work alongside you to implement solutions.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Network Access</h3>
+                    <p>Connections to investors, incubators, and development partners to accelerate your business growth.</p>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Future Growth Partner</h3>
+                    <p>We grow with our clients, building long-term relationships based on trust and mutual success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDUSTRIES SECTION -->
+        <section class="industries-section">
+            <div class="section-header">
+                <h2>Industries We Specialize In</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="industries-intro">
+                <p>Our business consulting has led us to work with businesses of all sizes and structures, both private and public, across a variety of industries. That said, we do specialize in some notably complex and fast-paced ones.</p>
+            </div>
+
+            <div class="industries-grid">
+                <div class="industry-item">Capital Markets Readiness</div>
+                <div class="industry-item">Technology</div>
+                <div class="industry-item">Life Sciences</div>
+                <div class="industry-item">Insurance</div>
+                <div class="industry-item">Healthcare</div>
+                <div class="industry-item">AI</div>
+                <div class="industry-item">Financial Services</div>
+                <div class="industry-item">Fintech</div>
+                <div class="industry-item">Digital Assets</div>
+                <div class="industry-item">Private Equity</div>
+                <div class="industry-item">Venture Capital</div>
+                <div class="industry-item">Real Estate</div>
+                <div class="industry-item">Cannabis</div>
+                <div class="industry-item">Mining & Metals</div>
+                <div class="industry-item">Manufacturing & Distribution</div>
+                <div class="industry-item">Telecommunications</div>
+                <div class="industry-item">Consumer Goods</div>
+            </div>
+        </section>
+
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        const serviceData = {
+            Business: {
+                title: "Business Strategy & Planning",
+                description: "Comprehensive business strategy and planning services to help you define your vision, set goals, and create actionable plans for success.",
+                features: [
+                    "Business plans & pitch decks",
+                    "Market entry strategies",
+                    "Growth roadmaps",
+                    "Competitive analysis"
+                ]
+            },
+            Financial: {
+                title: "Financial Advisory",
+                description: "Expert financial advisory services to help you navigate complex financial landscapes and make informed decisions.",
+                features: [
+                    "Start-up funding readiness",
+                    "Financial modeling & projections",
+                    "Investor engagement support",
+                    "Cash flow management"
+                ]
+            },
+            Operation: {
+                title: "Operations & Compliance",
+                description: "Operational efficiency and compliance solutions to streamline your business processes and ensure regulatory adherence.",
+                features: [
+                    "Process design & improvement",
+                    "Risk & regulatory compliance",
+                    "Business performance systems",
+                    "Quality management"
+                ]
+            },
+            SME: {
+                title: "SME & Entrepreneur Support",
+                description: "Comprehensive support services for small and medium-sized enterprises (SMEs) and entrepreneurs.",
+                features: [
+                    "Enterprise supplier development advisory",
+                    "Business development support",
+                    "Coaching & mentorship programs",
+                    "Startup acceleration"
+                ]
+            }
+        };
+
+        document.querySelectorAll('.item[data-service]').forEach(item => {
+            item.addEventListener('click', function() {
+                const service = this.dataset.service;
+                showServiceInfo(service);
+            });
+        });
+
+        function showServiceInfo(service) {
+            const info = serviceData[service];
+            if (!info) return;
+
+            const content = document.getElementById('serviceContent');
+            content.innerHTML = `
+                <h3>${info.title}</h3>
+                <p>${info.description}</p>
+                <ul>
+                    ${info.features.map(feature => `<li>${feature}</li>`).join('')}
+                </ul>
+            `;
+
+            document.getElementById('serviceInfo').classList.add('active');
+        }
+
+        function closeServiceInfo() {
+            document.getElementById('serviceInfo').classList.remove('active');
+        }
+
+        document.addEventListener('click', function(e) {
+            const serviceInfo = document.getElementById('serviceInfo');
+            const isClickInside = serviceInfo.contains(e.target) || e.target.closest('.item[data-service]');
+            
+            if (!isClickInside && serviceInfo.classList.contains('active')) {
+                closeServiceInfo();
+            }
+        });
+
+        document.querySelectorAll('#navLinks a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
