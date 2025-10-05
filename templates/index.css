@@ -13,6 +13,22 @@ body {
     overflow-x: hidden;
 }
 
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.mobile-menu span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
 .main-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -420,27 +436,17 @@ nav ul li a:hover::after {
 
 .reason-card {
     flex: 0 0 300px;
-    background: rgba(72, 149, 238, 0.15);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(3, 75, 127, 0.944);;
+    border: 1px solid rgba(3, 75, 127, 0.944);
     border-radius: 20px;
     padding: 2rem;
     transition: all 0.3s ease;
     cursor: grab;
 }
+
 .reason-card:active {
     cursor: grabbing;
-}
-
-
-.reason-card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    padding: 2rem;
-    transition: all 0.3s ease;
-    cursor: default;
 }
 
 .reason-card:hover {
@@ -468,64 +474,6 @@ nav ul li a:hover::after {
     font-size: 0.95rem;
     line-height: 1.7;
 }
-
-@media (max-width: 600px) {
-.banner {
-    padding: 2rem 1rem;
-}
-
-.slider-container {
-    height: 350px;
-}
-
-.slider {
-    width: 140px;
-    height: 180px;
-}
-
-.slider .item {
-    transform: 
-        rotateY(calc((var(--position) - 1) * 90deg))
-        translateZ(220px);
-        }
-
-    .card {
-        padding: 1.5rem 1rem !important;
-    }
-
-    .card-icon {
-        font-size: 2.5rem !important;
-    }
-
-    .card h3 {
-        font-size: 1rem !important;
-    }
-
-    .card p {
-        font-size: 0.75rem !important;
-    }
-
-    .service-info {
-        padding: 2rem 1.5rem;
-        max-height: 70vh;
-    }
-
-    .target-clients,
-    .why-section {
-         margin: 50px auto;
-    }
-
-    .clients-grid,
-    .reasons-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .why-container {
-        padding: 3rem 2rem;
-    }
-}
-   
 
 .commitment-section {
     margin-bottom: 100px;
@@ -630,7 +578,7 @@ nav ul li a:hover::after {
     100% {
         opacity: 1;
         transform: scale(1) rotateY(0deg);
-        }
+    }
 }
 
 .stat-card:nth-child(1) { animation-delay: 0.3s; }
@@ -701,49 +649,6 @@ nav ul li a:hover::after {
 .stat-card p {
     font-size: 16px;
     line-height: 1.6;
-}
-
-
-@media (max-width: 768px) {
-    .main-container {
-        padding: 0 20px;
-    }
-
-    .section-header h2 {
-        font-size: 32px;
-    }
-
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .industries-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-
-    .commitment-container {
-        padding: 40px 30px;
-    }
-
-    .commitment-badge h3 {
-        font-size: 28px;
-    }
-
-    .commitment-stats {
-        grid-template-columns: 1fr;
-    }
-
-    .vision-footer {
-        padding: 35px 30px;
-    }
-
-    .vision-footer h3 {
-        font-size: 26px;
-    }
-
-    .vision-footer p {
-        font-size: 18px;
-    }
 }
 
 
@@ -935,9 +840,9 @@ footer::before {
 .footer-bottom-links {
     display: flex;
     gap: 25px;
- }
+}
 
- .footer-bottom-links a {
+.footer-bottom-links a {
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     font-size: 14px;
@@ -949,7 +854,228 @@ footer::before {
 }
 
 
-@media (max-width: 968px) {
+@media (max-width: 1024px) {
+    nav {
+        padding: 20px 40px;
+    }
+
+    .main-container {
+        padding: 0 40px;
+    }
+
+    .home {
+        max-width: 800px;
+        padding: 60px 40px;
+        gap: 40px;
+    }
+
+    .home .content h3 {
+        font-size: 40px;
+    }
+
+    .home .content p {
+        font-size: 18px;
+    }
+
+    .section-header h2 {
+        font-size: 40px;
+    }
+
+    .commitment-container {
+        padding: 50px 40px;
+    }
+
+    .commitment-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-section {
+        margin: 80px auto;
+    }
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 30px;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        gap: 0;
+        padding: 40px 0;
+        transition: left 0.4s ease;
+        z-index: 99;
+    }
+
+    nav ul.active {
+        left: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        display: block;
+        padding: 10px 20px;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    .company-name h1 {
+        font-size: 24px;
+    }
+
+    .company-name p {
+        font-size: 12px;
+    }
+
+    .main-container {
+        padding: 0 20px;
+    }
+
+    .home {
+        flex-direction: column;
+        padding: 40px 30px;
+        gap: 30px;
+        margin: 40px 20px;
+        max-width: 100%;
+    }
+
+    .home .home-logo {
+        order: 2;
+    }
+
+    .home .content {
+        order: 1;
+        text-align: center;
+    }
+
+    .home .home-logo img {
+        max-width: 300px;
+    }
+
+    .home .content h3 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .home .content p {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .home .btn {
+        padding: 14px 35px;
+        font-size: 16px;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .section-header .underline {
+        width: 100px;
+        height: 4px;
+    }
+
+    .why-section {
+        margin: 60px auto;
+        padding: 0 1rem;
+    }
+
+    .why-container {
+        padding: 3rem 2rem;
+        border-radius: 20px;
+    }
+
+    .why-container h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .reasons-grid {
+        gap: 1.5rem;
+    }
+
+    .reason-card {
+        flex: 0 0 280px;
+        padding: 1.5rem;
+    }
+
+    .reason-icon {
+        font-size: 2rem;
+    }
+
+    .reason-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .reason-card p {
+        font-size: 0.9rem;
+    }
+
+    .commitment-section {
+        margin-bottom: 60px;
+    }
+
+    .commitment-container {
+        padding: 40px 25px;
+        border-radius: 25px;
+    }
+
+    .commitment-badge h3 {
+        font-size: 28px;
+    }
+
+    .commitment-badge p {
+        font-size: 18px;
+    }
+
+    .commitment-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stat-card {
+        padding: 30px 25px;
+    }
+
+    .stat-card .stat-icon {
+        font-size: 40px;
+    }
+
+    .stat-card h4 {
+        font-size: 24px;
+    }
+
+    .stat-card p {
+        font-size: 15px;
+    }
+
+    .floating-circle {
+        display: none;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -984,10 +1110,324 @@ footer::before {
     .footer-bottom {
         justify-content: center;
         text-align: center;
+        flex-direction: column;
     }
 
     .footer-bottom-links {
         width: 100%;
         justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width: 480px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    .company-name h1 {
+        font-size: 20px;
+    }
+
+    .company-name p {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .mobile-menu span {
+        width: 22px;
+        height: 2.5px;
+    }
+
+    .main-container {
+        padding: 0 15px;
+    }
+
+    .home {
+        padding: 30px 20px;
+        gap: 25px;
+        margin: 30px 15px;
+        border-radius: 20px;
+    }
+
+    .home .home-logo img {
+        max-width: 250px;
+        border-radius: 15px;
+    }
+
+    .home .content h3 {
+        font-size: 26px;
+        margin-bottom: 12px;
+    }
+
+    .home .content p {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .home .btn {
+        padding: 12px 30px;
+        font-size: 15px;
+        border-radius: 40px;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    .section-header h2 {
+        font-size: 26px;
+        letter-spacing: 1.5px;
+    }
+
+    .section-header .underline {
+        width: 80px;
+        height: 3px;
+    }
+
+    .why-section {
+        margin: 50px auto;
+        padding: 0 0.75rem;
+    }
+
+    .why-container {
+        padding: 2.5rem 1.5rem;
+        border-radius: 20px;
+    }
+
+    .why-container h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .reasons-grid {
+        gap: 1rem;
+    }
+
+    .reason-card {
+        flex: 0 0 260px;
+        padding: 1.25rem;
+    }
+
+    .reason-icon {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .reason-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .reason-card p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .commitment-section {
+        margin-bottom: 50px;
+    }
+
+    .commitment-container {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    .commitment-badge {
+        margin-bottom: 30px;
+    }
+
+    .commitment-badge h3 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .commitment-badge p {
+        font-size: 16px;
+    }
+
+    .commitment-stats {
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .stat-card {
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+
+    .stat-card .stat-icon {
+        font-size: 35px;
+        margin-bottom: 12px;
+    }
+
+    .stat-card h4 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .stat-card p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    footer {
+        padding: 40px 15px 25px;
+        margin-top: 60px;
+    }
+
+    .footer-content {
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .logo-footer img {
+        width: 150px;
+    }
+
+    .logo-footer p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .footer-links {
+        gap: 10px;
+    }
+
+    .footer-links a {
+        font-size: 15px;
+    }
+
+    .social-media a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .footer-section p {
+        font-size: 13px !important;
+    }
+
+    .footer-bottom {
+        padding-top: 25px;
+        gap: 15px;
+    }
+
+    .footer-bottom p {
+        font-size: 13px;
+    }
+
+    .footer-bottom-links {
+        gap: 15px;
+    }
+
+    .footer-bottom-links a {
+        font-size: 13px;
+    }
+}
+
+/* Extra small devices (360px and below) */
+@media (max-width: 360px) {
+    .company-name h1 {
+        font-size: 18px;
+    }
+
+    .home {
+        padding: 25px 15px;
+        margin: 25px 10px;
+    }
+
+    .home .home-logo img {
+        max-width: 220px;
+    }
+
+    .home .content h3 {
+        font-size: 22px;
+    }
+
+    .home .content p {
+        font-size: 14px;
+    }
+
+    .home .btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+
+    .section-header h2 {
+        font-size: 22px;
+    }
+
+    .why-container {
+        padding: 2rem 1rem;
+    }
+
+    .why-container h2 {
+        font-size: 1.3rem;
+    }
+
+    .reason-card {
+        flex: 0 0 240px;
+        padding: 1rem;
+    }
+
+    .commitment-container {
+        padding: 25px 15px;
+    }
+
+    .commitment-badge h3 {
+        font-size: 20px;
+    }
+
+    .commitment-badge p {
+        font-size: 14px;
+    }
+
+    .stat-card {
+        padding: 20px 15px;
+    }
+
+    .stat-card .stat-icon {
+        font-size: 30px;
+    }
+
+    .stat-card h4 {
+        font-size: 20px;
+    }
+
+    .stat-card p {
+        font-size: 13px;
+    }
+}
+
+/* Landscape mode adjustments for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    nav ul {
+        height: auto;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    nav ul li {
+        padding: 15px 0;
+    }
+
+    .home {
+        margin: 20px auto;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    .why-section,
+    .commitment-section {
+        margin: 40px auto;
     }
 }

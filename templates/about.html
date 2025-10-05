@@ -22,6 +22,11 @@
         <li><a href="service.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="mobile-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
     <section class="about">
@@ -161,7 +166,7 @@
     </section>
 
     <div class="main-container">
-        <!-- TEAM SECTION -->
+        
         <section class="team-section">
             <div class="section-header">
                 <h2>Leadership Team</h2>
@@ -234,6 +239,23 @@
             </div>
         </div>
     </footer>
-    
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('nav ul');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.querySelector('nav ul');
+                const mobileMenu = document.querySelector('.mobile-menu');
+                navLinks.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

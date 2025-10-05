@@ -461,32 +461,56 @@ nav ul li a:hover::after {
 
 
 @media (max-width: 968px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-
     nav {
-        padding: 20px 30px;
+        padding: 15px 30px;
     }
 
     nav ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
         background: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(20px);
         flex-direction: column;
-        padding: 20px;
-        gap: 15px;
+        gap: 0;
+        padding: 40px 0;
+        transition: left 0.4s ease;
+        z-index: 99;
     }
 
     nav ul.active {
-        display: flex;
+        left: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        display: block;
+        padding: 10px 20px;
     }
 
     .mobile-menu {
         display: flex;
+    }
+
+    .company-name h1 {
+        font-size: 24px;
+    }
+
+    .company-name p {
+        font-size: 12px;
+    }
+
+    .main-container {
+        padding: 0 20px;
     }
 
     .section-header h2 {

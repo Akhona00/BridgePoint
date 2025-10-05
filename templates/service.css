@@ -167,6 +167,7 @@ nav ul li a:hover::after {
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    z-index: 101;
 }
 
 .mobile-menu span {
@@ -434,49 +435,55 @@ nav ul li a:hover::after {
 
 @media (max-width: 900px) {
     nav {
-        padding: 1rem 1.5rem;
+        padding: 15px 30px;
     }
 
-    .mobile-menu {
-        display: flex;
-    }
     nav ul {
         position: fixed;
-        top: 76px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: rgba(52, 82, 220, 0.97);
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(26, 26, 26, 0.98);
         backdrop-filter: blur(20px);
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
+        flex-direction: column;
         gap: 0;
-        padding: 0;
-        transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        padding: 40px 0;
+        transition: left 0.4s ease;
+        z-index: 99;
     }
 
     nav ul.active {
-        max-height: 400px;
-        opacity: 1;
-        padding: 2rem 0;
+        left: 0;
     }
 
     nav ul li {
         width: 100%;
         text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     nav ul li a {
+        font-size: 18px;
         display: block;
-        color: #fff !important;
-        font-size: 1.2rem;
-        padding: 0.8rem 2rem;
+        padding: 10px 20px;
     }
 
-    nav ul li a::after {
-        background: white;
+    .mobile-menu {
+        display: flex;
+    }
+
+    .company-name h1 {
+        font-size: 24px;
+    }
+
+    .company-name p {
+        font-size: 12px;
+    }
+
+    .main-container {
+        padding: 0 20px;
     }
 
     .slider-container {

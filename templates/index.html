@@ -22,6 +22,11 @@
       <li><a href="service.html">Services</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <div class="mobile-menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
   </nav>
 
   <section class="home">
@@ -152,8 +157,25 @@
     </footer>
 
     <script>
-        const slider = document.querySelector('.reasons-grid');
+        function toggleMenu() {
+            const navLinks = document.querySelector('nav ul');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        }
 
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.querySelector('nav ul');
+                const mobileMenu = document.querySelector('.mobile-menu');
+                navLinks.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Drag scroll functionality for reasons grid
+        const slider = document.querySelector('.reasons-grid');
         let isDown = false;
         let startX;
         let scrollLeft;
@@ -179,7 +201,7 @@
             if(!isDown) return;
             e.preventDefault();
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2; // scroll speed multiplier
+            const walk = (x - startX) * 2;
             slider.scrollLeft = scrollLeft - walk;
         });
     </script>
