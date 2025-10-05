@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="floating-circle circle-1"></div>
+    <div class="floating-circle circle-2"></div>
+    
+    <nav>
+        <div class="company-name">
+            <h1>Bridge<span class="blue">P</span>oint</h1>
+            <p>Advisory</p>
+        </div>
+        <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section class="contact-section">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <div class="underline"></div>
+            <p>We'd love to hear from you. Let's start a conversation.</p>
+        </div>
+
+        <div class="contact-container">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Visit Us</h3>
+                    <p>123 Business Avenue<br>Sandton, Johannesburg<br>South Africa, 2196</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon"><i><i class="fas fa-phone"></i></i></div>
+                    <h3>Call Us</h3>
+                    <p>Phone: <a href="tel:+27123456789">+27 (0)12 345 6789</a><br>
+                    Mobile: <a href="tel:+27823456789">+27 (0)82 345 6789</a></p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Email Us</h3>
+                    <p>General: <a href="mailto:info@bridgepoint.co.za">info@bridgepoint.co.za</a><br>
+                    Support: <a href="mailto:support@bridgepoint.co.za">support@bridgepoint.co.za</a></p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-business-time"></i></div>
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 8:00 AM - 5:00 PM<br>
+                    Saturday: 9:00 AM - 1:00 PM<br>
+                    Sunday: Closed</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+27 82 345 6789">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required placeholder="How can we help you?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-section">
+            <h3>Find Us on the Map</h3>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.3407887091995!2d28.054089315012577!3d-26.107330583471873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c68f0406a51%3A0x238ac9d9b1d34041!2sSandton%2C%20Johannesburg!5e0!3m2!1sen!2sza!4v1234567890123!5m2!1sen!2sza" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0; border-radius: 8px;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo-footer">
+                <img src="logo.jpeg" alt="BridgePoint Advisory Logo">
+                <p>Empowering businesses with strategic advisory services and innovative solutions. Your trusted partner in navigating complex business landscapes.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="service.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-media">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p style="margin-top: 20px; color: rgba(255, 255, 255, 0.7); font-size: 14px;">
+                    <i class="fas fa-envelope"></i> info@bridgepoint.co.za<br>
+                    <i class="fas fa-phone"></i> +27 (0)12 345 6789
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 BridgePoint Advisory. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Display success message
+            alert(`Thank you, ${name}! Your message has been received. We'll get back to you shortly at ${email}.`);
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+            
+            // In a real application, you would send this data to a server
+            console.log('Form data:', { name, email, phone, subject, message });
+        }
+    </script>
+</body>
+</html>
