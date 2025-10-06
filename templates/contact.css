@@ -780,3 +780,271 @@ footer::before {
         justify-content: center;
     }
 }
+
+@media (max-width: 1024px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 968px) {
+    nav {
+        padding: 15px 30px;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        gap: 0;
+        padding: 40px 0;
+        transition: left 0.4s ease;
+        z-index: 99;
+    }
+
+    nav ul.active {
+        left: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        display: block;
+        padding: 10px 20px;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    .company-name h1 {
+        font-size: 24px;
+    }
+
+    .company-name p {
+        font-size: 12px;
+    }
+
+    .main-container {
+        padding: 0 20px;
+    }
+
+    .section-header h2 {
+        font-size: 36px;
+    }
+
+    .section-header p {
+        font-size: 16px;
+    }
+
+    .contact-section {
+        padding: 60px 20px;
+    }
+
+    .contact-container {
+        gap: 30px;
+    }
+
+    .circle-1, .circle-2 {
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    .section-header h2 {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .section-header .underline {
+        width: 100px;
+        height: 4px;
+    }
+
+    .contact-section {
+        padding: 50px 15px;
+    }
+
+    .info-card {
+        padding: 25px;
+    }
+
+    .info-card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .info-card h3 {
+        font-size: 20px;
+    }
+
+    .info-card p {
+        font-size: 15px;
+    }
+
+    .contact-form {
+        padding: 30px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .submit-btn {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .map-section h3 {
+        font-size: 28px;
+    }
+
+    .map-container iframe {
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 12px 15px;
+    }
+
+    .company-name h1 {
+        font-size: 20px;
+    }
+
+    .company-name p {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .section-header h2 {
+        font-size: 26px;
+        letter-spacing: 1.5px;
+    }
+
+    .section-header p {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .contact-section {
+        padding: 40px 10px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .info-card-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .info-card h3 {
+        font-size: 18px;
+    }
+
+    .info-card p {
+        font-size: 14px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+    }
+
+    .map-section {
+        margin-top: 60px;
+    }
+
+    .map-section h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .map-container {
+        padding: 15px;
+    }
+
+    .map-container iframe {
+        height: 300px;
+    }
+
+    .circle-1 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle-2 {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 360px) {
+    .section-header h2 {
+        font-size: 22px;
+    }
+
+    .contact-form {
+        padding: 15px;
+    }
+
+    .info-card {
+        padding: 15px;
+    }
+
+    .map-container iframe {
+        height: 250px;
+    }
+}
